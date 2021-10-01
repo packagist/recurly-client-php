@@ -1,4 +1,6 @@
 <?php
+require 'lib/recurly/dunning_campaign.php';
+require 'lib/recurly/dunning_cycle.php';
 
 
 class Recurly_DunningCampaignTest extends Recurly_TestCase
@@ -14,5 +16,6 @@ class Recurly_DunningCampaignTest extends Recurly_TestCase
     $dunning_campaign = Recurly_DunningCampaign::get('1234abcd', $this->client);
 
     $this->assertEquals($dunning_campaign->id, '1234abcd');
+    $this->assertEquals($dunning_campaign->code, 'code');
   }
 }
