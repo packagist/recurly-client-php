@@ -23,6 +23,14 @@ class Recurly_DunningCampaign extends Recurly_Resource
     );
   }
 
+  protected static function uriForDunningCampaign($uuid) {
+    return self::_safeUri(Recurly_Client::PATH_DUNNING_CAMPAIGNS, $uuid);
+  }
+
+  public static function get($uuid, $client = null) {
+    return Recurly_Base::_get(Recurly_DunningCampaign::uriForDunningCampaign($uuid), $client);
+  }
+
   public function bulkUpdate($planCodes = []) {
     $this->_save(Recurly_Client::PUT, $this->uri() . '/bulk_update', $planCodes);
   }

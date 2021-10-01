@@ -43,6 +43,7 @@
  * @property string $all_transactions A link to all transactions on the invoice. Only present if there are more than 500 transactions
  * @property int $subtotal_before_discount_in_cents The total of all adjustments on the invoice before discounts or taxes are applied.
  * @property int $credit_customer_notes Allows merchant to set customer notes on a credit invoice. Will only be rejected if type is set to "charge", otherwise will be ignored if no credit invoice is created.
+ * @property string $dunning_campaign_id Unique ID to identify the dunning campaign used when dunning the invoice.
  */
 class Recurly_Invoice extends Recurly_Resource
 {
@@ -237,7 +238,7 @@ class Recurly_Invoice extends Recurly_Resource
     return array(
       'address', 'billing_info', 'billing_info_uuid', 'terms_and_conditions', 'customer_notes', 'vat_reverse_charge_notes',
       'collection_method', 'net_terms', 'po_number', 'currency', 'credit_customer_notes',
-      'gateway_code'
+      'gateway_code', 'dunning_campaign_id'
     );
   }
 
