@@ -13,25 +13,34 @@
  */
 class Recurly_DunningCampaign extends Recurly_Resource
 {
-  protected function getNodeName() {
-    return 'dunning_campaign';
-  }
-  protected function getWriteableAttributes() {
-    return array(
-      'name', 'code', 'description', 'default',
-      'dunning_cycles', 'created_at', 'updated_at', 'deleted_at'
-    );
+  public static function get($uuid, $client = null) {
+    return Recurly_Base::_get(Recurly_DunningCampaign::uriForDunningCampaign($uuid), $client);
   }
 
   protected static function uriForDunningCampaign($uuid) {
     return self::_safeUri(Recurly_Client::PATH_DUNNING_CAMPAIGNS, $uuid);
   }
 
-  public static function get($uuid, $client = null) {
-    return Recurly_Base::_get(Recurly_DunningCampaign::uriForDunningCampaign($uuid), $client);
+  protected function uri() {
+    if (!empty($this->_href))
+      return $this->getHref();
+    else
+      return Recurly_DunningCampaign::uriForDunningCampaign($this->id);
   }
 
   public function bulkUpdate($planCodes = []) {
     $this->_save(Recurly_Client::PUT, $this->uri() . '/bulk_update', $planCodes);
+    return true;
+  }
+
+  protected function getNodeName() {
+    return 'dunning_campaign';
+  }
+
+  protected function getWriteableAttributes() {
+    return array(
+      'name', 'code', 'description', 'default',
+      'dunning_cycles', 'created_at', 'updated_at', 'deleted_at'
+    );
   }
 }
