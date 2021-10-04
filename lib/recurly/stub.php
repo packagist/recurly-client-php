@@ -32,6 +32,10 @@ class Recurly_Stub extends Recurly_Base
     return $object;
   }
 
+  public function populateXmlDoc(&$doc, &$node) {
+    $stubNode = $node->appendChild($doc->createAttribute($this->objectType));
+  }
+
   public function __toString()
   {
     return "<Recurly_Stub[{$this->objectType}] href={$this->_href}>";
