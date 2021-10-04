@@ -1,6 +1,4 @@
 <?php
-require 'lib/recurly/dunning_campaign.php';
-require 'lib/recurly/dunning_cycle.php';
 
 
 class Recurly_DunningCampaignTest extends Recurly_TestCase
