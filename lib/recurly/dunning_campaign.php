@@ -2,6 +2,7 @@
 
 /**
  * Class Recurly_DunningCampaign
+ * @property string $id The uuid of the Dunning Campaign.
  * @property string $name The name of the Dunning Campaign.
  * @property string $code The unique dunning campaign identifier code. Only numbers, lowercase letters, dashes, pluses, and underscores can be used.
  * @property string $description An internal description to identify a dunning campaign.
@@ -13,12 +14,12 @@
  */
 class Recurly_DunningCampaign extends Recurly_Resource
 {
-  public static function get($uuid, $client = null) {
-    return Recurly_Base::_get(Recurly_DunningCampaign::uriForDunningCampaign($uuid), $client);
+  public static function get($id, $client = null) {
+    return Recurly_Base::_get(Recurly_DunningCampaign::uriForDunningCampaign($id), $client);
   }
 
-  protected static function uriForDunningCampaign($uuid) {
-    return self::_safeUri(Recurly_Client::PATH_DUNNING_CAMPAIGNS, $uuid);
+  protected static function uriForDunningCampaign($id) {
+    return self::_safeUri(Recurly_Client::PATH_DUNNING_CAMPAIGNS, $id);
   }
 
   protected function uri() {
