@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.14.10](https://github.com/recurly/recurly-client-php/tree/2.14.10) (2024-04-04)
+
+[Full Changelog](https://github.com/recurly/recurly-client-php/compare/2.14.9...2.14.10)
+
+
+**Merged Pull Requests**
+
+- Add net_terms_type to Invoices, Purchases, and Subscriptions [#806](https://github.com/recurly/recurly-client-php/pull/806) ([flaviomuller](https://github.com/flaviomuller))
+
+
+
 ## [2.14.9](https://github.com/recurly/recurly-client-php/tree/2.14.9) (2024-03-19)
 
 [Full Changelog](https://github.com/recurly/recurly-client-php/compare/2.14.8...2.14.9)
