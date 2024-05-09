@@ -55,7 +55,7 @@ class Recurly_SubscriptionAddOn extends Recurly_Resource
    */
   public function __toString() {
     $class = get_class($this);
-    $values = $this->__valuesString();
+    $values = $this->getValuesString();
     return "<$class $values>";
   }
 }
