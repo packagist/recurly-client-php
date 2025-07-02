@@ -11,7 +11,7 @@ class Recurly_Error extends Exception {
 
 	private $recurlyCode;
 
-	public function __construct($message, $code = 0, Exception $previous = null, $recurlyCode = null)
+	public function __construct($message, $code = 0, ?Exception $previous = null, $recurlyCode = null)
 	{
 		$this->recurlyCode = $recurlyCode;
 
